@@ -10,6 +10,29 @@
 		0427A1952178BFD700DAB134 /* GameScript.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0427A18B2178BFD700DAB134 /* GameScript.framework */; };
 		0427A19A2178BFD700DAB134 /* GameScriptTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0427A1992178BFD700DAB134 /* GameScriptTests.m */; };
 		0427A19C2178BFD700DAB134 /* GameScript.h in Headers */ = {isa = PBXBuildFile; fileRef = 0427A18E2178BFD700DAB134 /* GameScript.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0427A1BF2178C02C00DAB134 /* MBSSuspendControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0427A1A52178C02C00DAB134 /* MBSSuspendControl.m */; };
+		0427A1C02178C02C00DAB134 /* RegexKitLite.h in Headers */ = {isa = PBXBuildFile; fileRef = 0427A1A72178C02C00DAB134 /* RegexKitLite.h */; };
+		0427A1C12178C02C00DAB134 /* NSStringUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 0427A1A82178C02C00DAB134 /* NSStringUtils.h */; };
+		0427A1C22178C02C00DAB134 /* MBAccessoryView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0427A1A92178C02C00DAB134 /* MBAccessoryView.h */; };
+		0427A1C32178C02C00DAB134 /* MBSUpDownButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 0427A1AA2178C02C00DAB134 /* MBSUpDownButton.h */; };
+		0427A1C42178C02C00DAB134 /* UILabel+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0427A1AB2178C02C00DAB134 /* UILabel+Utils.m */; };
+		0427A1C52178C02C00DAB134 /* MBSInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0427A1AC2178C02C00DAB134 /* MBSInputView.m */; };
+		0427A1C62178C02C00DAB134 /* MBGlobalCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 0427A1AD2178C02C00DAB134 /* MBGlobalCore.m */; };
+		0427A1C72178C02C00DAB134 /* MBSTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 0427A1AE2178C02C00DAB134 /* MBSTextField.m */; };
+		0427A1C92178C02C00DAB134 /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 0427A1B02178C02C00DAB134 /* RegexKitLite.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0427A1CA2178C02C00DAB134 /* MBAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0427A1B12178C02C00DAB134 /* MBAccessoryView.m */; };
+		0427A1CB2178C02C00DAB134 /* NSStringUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0427A1B22178C02C00DAB134 /* NSStringUtils.m */; };
+		0427A1CC2178C02C00DAB134 /* UILabel+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 0427A1B32178C02C00DAB134 /* UILabel+Utils.h */; };
+		0427A1CD2178C02C00DAB134 /* MBSInputView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0427A1B42178C02C00DAB134 /* MBSInputView.h */; };
+		0427A1CE2178C02C00DAB134 /* MBSUpDownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0427A1B52178C02C00DAB134 /* MBSUpDownButton.m */; };
+		0427A1CF2178C02C00DAB134 /* MBSTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 0427A1B62178C02C00DAB134 /* MBSTextField.h */; };
+		0427A1D12178C02C00DAB134 /* MBGlobalCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 0427A1B82178C02C00DAB134 /* MBGlobalCore.h */; };
+		0427A1D22178C02C00DAB134 /* MBSLoginAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 0427A1B92178C02C00DAB134 /* MBSLoginAlert.m */; };
+		0427A1D32178C02C00DAB134 /* MBSLoginAlert.h in Headers */ = {isa = PBXBuildFile; fileRef = 0427A1BA2178C02C00DAB134 /* MBSLoginAlert.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0427A1D42178C02C00DAB134 /* MBSSuspendControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0427A1BB2178C02C00DAB134 /* MBSSuspendControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0427A1D52178C02C00DAB134 /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 0427A1BD2178C02C00DAB134 /* UIViewExt.m */; };
+		0427A1D62178C02C00DAB134 /* UIViewExt.h in Headers */ = {isa = PBXBuildFile; fileRef = 0427A1BE2178C02C00DAB134 /* UIViewExt.h */; };
+		046449C7217A27CD00A588BA /* MBSPrefixDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = 046449C6217A27CD00A588BA /* MBSPrefixDefine.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +52,29 @@
 		0427A1942178BFD700DAB134 /* GameScriptTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GameScriptTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0427A1992178BFD700DAB134 /* GameScriptTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameScriptTests.m; sourceTree = "<group>"; };
 		0427A19B2178BFD700DAB134 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0427A1A52178C02C00DAB134 /* MBSSuspendControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBSSuspendControl.m; sourceTree = "<group>"; };
+		0427A1A72178C02C00DAB134 /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
+		0427A1A82178C02C00DAB134 /* NSStringUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSStringUtils.h; sourceTree = "<group>"; };
+		0427A1A92178C02C00DAB134 /* MBAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBAccessoryView.h; sourceTree = "<group>"; };
+		0427A1AA2178C02C00DAB134 /* MBSUpDownButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBSUpDownButton.h; sourceTree = "<group>"; };
+		0427A1AB2178C02C00DAB134 /* UILabel+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Utils.m"; sourceTree = "<group>"; };
+		0427A1AC2178C02C00DAB134 /* MBSInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBSInputView.m; sourceTree = "<group>"; };
+		0427A1AD2178C02C00DAB134 /* MBGlobalCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBGlobalCore.m; sourceTree = "<group>"; };
+		0427A1AE2178C02C00DAB134 /* MBSTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBSTextField.m; sourceTree = "<group>"; };
+		0427A1B02178C02C00DAB134 /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
+		0427A1B12178C02C00DAB134 /* MBAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBAccessoryView.m; sourceTree = "<group>"; };
+		0427A1B22178C02C00DAB134 /* NSStringUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringUtils.m; sourceTree = "<group>"; };
+		0427A1B32178C02C00DAB134 /* UILabel+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Utils.h"; sourceTree = "<group>"; };
+		0427A1B42178C02C00DAB134 /* MBSInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBSInputView.h; sourceTree = "<group>"; };
+		0427A1B52178C02C00DAB134 /* MBSUpDownButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBSUpDownButton.m; sourceTree = "<group>"; };
+		0427A1B62178C02C00DAB134 /* MBSTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBSTextField.h; sourceTree = "<group>"; };
+		0427A1B82178C02C00DAB134 /* MBGlobalCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBGlobalCore.h; sourceTree = "<group>"; };
+		0427A1B92178C02C00DAB134 /* MBSLoginAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBSLoginAlert.m; sourceTree = "<group>"; };
+		0427A1BA2178C02C00DAB134 /* MBSLoginAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBSLoginAlert.h; sourceTree = "<group>"; };
+		0427A1BB2178C02C00DAB134 /* MBSSuspendControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBSSuspendControl.h; sourceTree = "<group>"; };
+		0427A1BD2178C02C00DAB134 /* UIViewExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewExt.m; sourceTree = "<group>"; };
+		0427A1BE2178C02C00DAB134 /* UIViewExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewExt.h; sourceTree = "<group>"; };
+		046449C6217A27CD00A588BA /* MBSPrefixDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBSPrefixDefine.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +99,13 @@
 		0427A1812178BFD700DAB134 = {
 			isa = PBXGroup;
 			children = (
+				0427A1BA2178C02C00DAB134 /* MBSLoginAlert.h */,
+				0427A1B92178C02C00DAB134 /* MBSLoginAlert.m */,
+				0427A1BB2178C02C00DAB134 /* MBSSuspendControl.h */,
+				0427A1A52178C02C00DAB134 /* MBSSuspendControl.m */,
+				046449C6217A27CD00A588BA /* MBSPrefixDefine.h */,
+				0427A1A62178C02C00DAB134 /* Source */,
+				0427A1BC2178C02C00DAB134 /* UIViewExt */,
 				0427A18D2178BFD700DAB134 /* GameScript */,
 				0427A1982178BFD700DAB134 /* GameScriptTests */,
 				0427A18C2178BFD700DAB134 /* Products */,
@@ -86,6 +139,38 @@
 			path = GameScriptTests;
 			sourceTree = "<group>";
 		};
+		0427A1A62178C02C00DAB134 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				0427A1A72178C02C00DAB134 /* RegexKitLite.h */,
+				0427A1B02178C02C00DAB134 /* RegexKitLite.m */,
+				0427A1A82178C02C00DAB134 /* NSStringUtils.h */,
+				0427A1B22178C02C00DAB134 /* NSStringUtils.m */,
+				0427A1A92178C02C00DAB134 /* MBAccessoryView.h */,
+				0427A1B12178C02C00DAB134 /* MBAccessoryView.m */,
+				0427A1AA2178C02C00DAB134 /* MBSUpDownButton.h */,
+				0427A1B52178C02C00DAB134 /* MBSUpDownButton.m */,
+				0427A1B32178C02C00DAB134 /* UILabel+Utils.h */,
+				0427A1AB2178C02C00DAB134 /* UILabel+Utils.m */,
+				0427A1B42178C02C00DAB134 /* MBSInputView.h */,
+				0427A1AC2178C02C00DAB134 /* MBSInputView.m */,
+				0427A1B82178C02C00DAB134 /* MBGlobalCore.h */,
+				0427A1AD2178C02C00DAB134 /* MBGlobalCore.m */,
+				0427A1B62178C02C00DAB134 /* MBSTextField.h */,
+				0427A1AE2178C02C00DAB134 /* MBSTextField.m */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		0427A1BC2178C02C00DAB134 /* UIViewExt */ = {
+			isa = PBXGroup;
+			children = (
+				0427A1BD2178C02C00DAB134 /* UIViewExt.m */,
+				0427A1BE2178C02C00DAB134 /* UIViewExt.h */,
+			);
+			path = UIViewExt;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -93,7 +178,19 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0427A1D32178C02C00DAB134 /* MBSLoginAlert.h in Headers */,
+				0427A1D42178C02C00DAB134 /* MBSSuspendControl.h in Headers */,
+				0427A1C32178C02C00DAB134 /* MBSUpDownButton.h in Headers */,
+				046449C7217A27CD00A588BA /* MBSPrefixDefine.h in Headers */,
 				0427A19C2178BFD700DAB134 /* GameScript.h in Headers */,
+				0427A1CD2178C02C00DAB134 /* MBSInputView.h in Headers */,
+				0427A1C22178C02C00DAB134 /* MBAccessoryView.h in Headers */,
+				0427A1CC2178C02C00DAB134 /* UILabel+Utils.h in Headers */,
+				0427A1C12178C02C00DAB134 /* NSStringUtils.h in Headers */,
+				0427A1D62178C02C00DAB134 /* UIViewExt.h in Headers */,
+				0427A1C02178C02C00DAB134 /* RegexKitLite.h in Headers */,
+				0427A1CF2178C02C00DAB134 /* MBSTextField.h in Headers */,
+				0427A1D12178C02C00DAB134 /* MBGlobalCore.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,6 +290,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0427A1C92178C02C00DAB134 /* RegexKitLite.m in Sources */,
+				0427A1CB2178C02C00DAB134 /* NSStringUtils.m in Sources */,
+				0427A1C42178C02C00DAB134 /* UILabel+Utils.m in Sources */,
+				0427A1CA2178C02C00DAB134 /* MBAccessoryView.m in Sources */,
+				0427A1D52178C02C00DAB134 /* UIViewExt.m in Sources */,
+				0427A1BF2178C02C00DAB134 /* MBSSuspendControl.m in Sources */,
+				0427A1CE2178C02C00DAB134 /* MBSUpDownButton.m in Sources */,
+				0427A1C62178C02C00DAB134 /* MBGlobalCore.m in Sources */,
+				0427A1D22178C02C00DAB134 /* MBSLoginAlert.m in Sources */,
+				0427A1C52178C02C00DAB134 /* MBSInputView.m in Sources */,
+				0427A1C72178C02C00DAB134 /* MBSTextField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +444,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = NO;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = B94C4GLS2Q;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -343,11 +452,13 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = GameScript/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = staticlib;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gdnybankiphone.mbsiphone.GameScript;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -360,6 +471,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = NO;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = B94C4GLS2Q;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -367,11 +479,13 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = GameScript/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = staticlib;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gdnybankiphone.mbsiphone.GameScript;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
