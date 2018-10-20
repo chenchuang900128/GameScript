@@ -63,8 +63,8 @@
         MBSUpDownButton *menuBtn;
         for (NSInteger i = 0; i < 5; i++) {
             
-            menuBtn = [[MBSUpDownButton alloc] initWithFrame:CGRectMake(34 * i,2, 34,40) imgStr:imgArr[i] title:titleArr[i] imgSize:CGSizeMake(22, 22) spaceYCenter:6];
-            [menuBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+            menuBtn = [[MBSUpDownButton alloc] initWithFrame:CGRectMake(34 * i,2, 34,40) imgStr:imgArr[i] title:titleArr[i] imgSize:CGSizeMake(22, 22) spaceYCenter:5];
+            [menuBtn setTitleColor:MB_RGB(212, 43, 43) forState:UIControlStateNormal];
             [menuBtn addTarget:self action:@selector(menuBtnClick:) forControlEvents:UIControlEventTouchUpInside];
             menuBtn.tag = 10 + i;
             [self.otherView addSubview:menuBtn];
@@ -98,7 +98,7 @@
 }
 
 - (void)menuBtnClick:(MBSUpDownButton *)sender{
-    
+
     if (self.clickBlock) {
         
         self.clickBlock(sender.tag - 10);
@@ -109,6 +109,7 @@
 
 - (void)btnClick:(MBSSuspendControl *)sender{
     
+    NSLog(@"悬浮窗");
     _isShow = !_isShow;
     if (_isShow) {
      

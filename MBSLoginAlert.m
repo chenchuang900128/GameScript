@@ -81,7 +81,7 @@
         
         // 227 202 125
         UIButton *regBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        regBtn.frame = CGRectMake(fieldWidth - 80, self.pwdV.bottom + 15, 65, 32);
+        regBtn.frame = CGRectMake(fieldWidth - 80, self.pwdV.bottom + 12, 65, 32);
         regBtn.layer.masksToBounds = YES;
         regBtn.titleLabel.font = [UIFont systemFontOfSize:12];
         [regBtn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
@@ -91,7 +91,7 @@
 
         // 227 202 125
         UIButton *sureBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        sureBtn.frame = CGRectMake(20, regBtn.bottom + 15, fieldWidth - 40, 44);
+        sureBtn.frame = CGRectMake(20, regBtn.bottom + 13, fieldWidth - 40, 44);
         sureBtn.backgroundColor = MB_RGB(227, 202, 125);
         sureBtn.layer.cornerRadius = 22.f;
         sureBtn.layer.masksToBounds = YES;
@@ -166,7 +166,7 @@
         
         // 227 202 125
         UIButton *regBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        regBtn.frame = CGRectMake(fieldWidth - 80, againPwdV.bottom + 15, 65, 32);
+        regBtn.frame = CGRectMake(fieldWidth - 80, againPwdV.bottom + 13, 65, 32);
         regBtn.layer.masksToBounds = YES;
         regBtn.titleLabel.font = [UIFont systemFontOfSize:12];
         [regBtn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
@@ -176,7 +176,7 @@
         
         // 227 202 125
         UIButton *sureBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        sureBtn.frame = CGRectMake(20, regBtn.bottom + 15, fieldWidth - 40, 44);
+        sureBtn.frame = CGRectMake(20, regBtn.bottom + 13, fieldWidth - 40, 44);
         sureBtn.backgroundColor = MB_RGB(227, 202, 125);
         sureBtn.layer.cornerRadius = 22.f;
         sureBtn.layer.masksToBounds = YES;
@@ -188,7 +188,6 @@
         
         [regBtn addTarget:self action:@selector(btnClick2:) forControlEvents:UIControlEventTouchUpInside];
         [sureBtn addTarget:self action:@selector(btnClick2:) forControlEvents:UIControlEventTouchUpInside];
-        
         
         
         self.height = sureBtn.bottom + 13;

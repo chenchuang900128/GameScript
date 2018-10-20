@@ -33,6 +33,8 @@
 		0427A1D52178C02C00DAB134 /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 0427A1BD2178C02C00DAB134 /* UIViewExt.m */; };
 		0427A1D62178C02C00DAB134 /* UIViewExt.h in Headers */ = {isa = PBXBuildFile; fileRef = 0427A1BE2178C02C00DAB134 /* UIViewExt.h */; };
 		046449C7217A27CD00A588BA /* MBSPrefixDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = 046449C6217A27CD00A588BA /* MBSPrefixDefine.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		04CE003B217B257500375621 /* CustomProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CE0039217B257500375621 /* CustomProgress.m */; };
+		04CE003C217B257500375621 /* CustomProgress.h in Headers */ = {isa = PBXBuildFile; fileRef = 04CE003A217B257500375621 /* CustomProgress.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		0427A1BD2178C02C00DAB134 /* UIViewExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewExt.m; sourceTree = "<group>"; };
 		0427A1BE2178C02C00DAB134 /* UIViewExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewExt.h; sourceTree = "<group>"; };
 		046449C6217A27CD00A588BA /* MBSPrefixDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBSPrefixDefine.h; sourceTree = "<group>"; };
+		04CE0039217B257500375621 /* CustomProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomProgress.m; sourceTree = "<group>"; };
+		04CE003A217B257500375621 /* CustomProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomProgress.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 				0427A1B92178C02C00DAB134 /* MBSLoginAlert.m */,
 				0427A1BB2178C02C00DAB134 /* MBSSuspendControl.h */,
 				0427A1A52178C02C00DAB134 /* MBSSuspendControl.m */,
+				04CE003A217B257500375621 /* CustomProgress.h */,
+				04CE0039217B257500375621 /* CustomProgress.m */,
 				046449C6217A27CD00A588BA /* MBSPrefixDefine.h */,
 				0427A1A62178C02C00DAB134 /* Source */,
 				0427A1BC2178C02C00DAB134 /* UIViewExt */,
@@ -181,6 +187,7 @@
 				0427A1D32178C02C00DAB134 /* MBSLoginAlert.h in Headers */,
 				0427A1D42178C02C00DAB134 /* MBSSuspendControl.h in Headers */,
 				0427A1C32178C02C00DAB134 /* MBSUpDownButton.h in Headers */,
+				04CE003C217B257500375621 /* CustomProgress.h in Headers */,
 				046449C7217A27CD00A588BA /* MBSPrefixDefine.h in Headers */,
 				0427A19C2178BFD700DAB134 /* GameScript.h in Headers */,
 				0427A1CD2178C02C00DAB134 /* MBSInputView.h in Headers */,
@@ -293,6 +300,7 @@
 				0427A1C92178C02C00DAB134 /* RegexKitLite.m in Sources */,
 				0427A1CB2178C02C00DAB134 /* NSStringUtils.m in Sources */,
 				0427A1C42178C02C00DAB134 /* UILabel+Utils.m in Sources */,
+				04CE003B217B257500375621 /* CustomProgress.m in Sources */,
 				0427A1CA2178C02C00DAB134 /* MBAccessoryView.m in Sources */,
 				0427A1D52178C02C00DAB134 /* UIViewExt.m in Sources */,
 				0427A1BF2178C02C00DAB134 /* MBSSuspendControl.m in Sources */,
