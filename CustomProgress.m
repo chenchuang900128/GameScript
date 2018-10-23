@@ -21,17 +21,21 @@
         self.maxValue = 100.f;
         
         self.backgroundColor = [UIColor clearColor];
+        
+        // 背景图片
         self.bgimg = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
         self.bgimg.layer.cornerRadius = self.frame.size.height/2;
         [self.bgimg.layer setMasksToBounds:YES];
 
         [self addSubview:self.bgimg];
         
+        // 进度条背景图片
         self.leftimg = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 0, self.frame.size.height)];
         self.leftimg.layer.cornerRadius = self.bgimg.layer.cornerRadius;
         [self.leftimg.layer setMasksToBounds:YES];
         [self addSubview:self.leftimg];
         
+        // 进度条上要展示的文字
         self.presentlab = [[UILabel alloc] initWithFrame:self.bgimg.bounds];
         self.presentlab.textAlignment = NSTextAlignmentCenter;
         self.presentlab.textColor = [UIColor grayColor];
@@ -44,18 +48,23 @@
 
 -(void)setProgress:(NSUInteger)progress
 {
-    self.leftimg.frame = CGRectMake(0, 0, self.frame.size.width/self.maxValue*progress, self.frame.size.height);
-    
-    self.presentlab.text = [NSString stringWithFormat:@"%lu％",progress];
-    self.presentlab.frame = self.leftimg.frame;
+    // 防止被除数为0
+    if((progress > 0) && (self.maxValue > 0)){
+        
+        // 根据进度条的值 算出展示的长度
+        self.leftimg.frame = CGRectMake(0, 0, self.frame.size.width/self.maxValue*progress, self.frame.size.height);
+        
+        // 显示进度数据
+        self.presentlab.text = [NSString stringWithFormat:@"%lu％",(unsigned long)progress];
+        self.presentlab.frame = self.leftimg.frame;
+    }
+   
 }
 
 
 - (void)show{
     
-    //    UIWindow *window = [[UIApplication sharedApplication].windows lastObject];
     UIWindow *window = [[[UIApplication sharedApplication] delegate] window];
-    
     [window addSubview:self];
     
     // 界面出现动画及位置
@@ -74,7 +83,6 @@
     // 界面消失动画
     [UIView animateWithDuration:0.2 animations:^{
         
-        // self.transform = CGAffineTransformMakeScale(0.6, 0.6);
         // 退下键盘
         self.alpha = 0.2;
         

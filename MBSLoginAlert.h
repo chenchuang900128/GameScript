@@ -17,14 +17,14 @@ typedef void(^CustomBlock)(id object);
 
 @interface MBSLoginAlert : UIView
 
-// 登录
+// 登录弹框初始化
 -(instancetype)initWithTitle:(NSString *)title loginBlock:(CustomBlock)loginBlock andRegisterBlock:(CustomBlock)registBlock;
 
-// 注册
+// 注册弹框初始化
 -(instancetype)initWithRegisterTitle:(NSString *)title loginBlock:(CustomBlock)loginBlock andRegisterBlock:(CustomBlock)registBlock;
-
+// 显示
 - (void)show;
-
+// 隐藏
 - (void)hide;
 
 @end

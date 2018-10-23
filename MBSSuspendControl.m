@@ -36,7 +36,7 @@
         self.backgroundColor = [UIColor colorWithWhite:0.1 alpha:0.7];
         self.layer.cornerRadius = 25.f;
         
-        
+        // 主菜单
         UIButton *mainBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         
         [mainBtn setBackgroundImage:[UIImage imageNamed:@"GameScript.bundle/menu7"] forState:UIControlStateNormal];
@@ -46,13 +46,14 @@
         [self addSubview:mainBtn];
         
         
+        // 添加平滑手势
         UIPanGestureRecognizer *panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(moveViewWithGestureRecognizer:)];
         [mainBtn addGestureRecognizer:panGestureRecognizer];
         
         
         
 
-        
+        // 添加弹出菜单
         self.otherView = [[UIView alloc] initWithFrame:CGRectMake(mainBtn.right + 3, 0, 34 * 5, 50)];
         self.otherView.hidden = YES;
         [self addSubview:self.otherView];
@@ -76,6 +77,7 @@
 }
 
 
+#pragma mark   手势滑动触发事件
 - (void)moveViewWithGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer
 {
     
@@ -97,6 +99,7 @@
     
 }
 
+#pragma mark  弹出菜单 点击事件
 - (void)menuBtnClick:(MBSUpDownButton *)sender{
 
     if (self.clickBlock) {
@@ -107,12 +110,14 @@
 }
 
 
+#pragma mark  主菜单点击， 展开或收缩
 - (void)btnClick:(MBSSuspendControl *)sender{
     
     NSLog(@"悬浮窗");
     _isShow = !_isShow;
     if (_isShow) {
      
+        // 展开
         [UIView animateWithDuration:0.2 animations:^{
             
             self.left = kScreenWidth - 230.f;
@@ -124,6 +129,7 @@
     }
     else{
         
+        // 收缩
         [UIView animateWithDuration:0.2 animations:^{
             
             self.left = kScreenWidth - 60.f;
@@ -145,7 +151,7 @@
 }
 
 
-
+#pragma mark  显示
 - (void)show{
     
     //    UIWindow *window = [[UIApplication sharedApplication].windows lastObject];
@@ -153,7 +159,7 @@
     
     [window addSubview:self];
     
-    // 设置微信支付界面出现动画及位置
+    // 界面出现动画及位置
     self.transform = CGAffineTransformMakeScale(0.6, 0.6);
     [UIView animateWithDuration:0.25 animations:^{
         // 标准状态
@@ -164,6 +170,7 @@
     
 }
 
+#pragma mark  隐藏
 - (void)hide{
     
     // 设置微信支付界面消失动画

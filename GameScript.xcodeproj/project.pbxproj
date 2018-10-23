@@ -171,8 +171,8 @@
 		0427A1BC2178C02C00DAB134 /* UIViewExt */ = {
 			isa = PBXGroup;
 			children = (
-				0427A1BD2178C02C00DAB134 /* UIViewExt.m */,
 				0427A1BE2178C02C00DAB134 /* UIViewExt.h */,
+				0427A1BD2178C02C00DAB134 /* UIViewExt.m */,
 			);
 			path = UIViewExt;
 			sourceTree = "<group>";

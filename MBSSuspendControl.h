@@ -16,12 +16,16 @@ typedef void (^myClickBlock)(NSUInteger index);
 
 @interface MBSSuspendControl : UIView
 
+// 初始化方法
 - (instancetype)initWithClickBlock:(myClickBlock)block;
 
+// 显示
 - (void)show;
 
+// 隐藏
 - (void)hide;
 
+// 是否展开
 @property(nonatomic,assign)BOOL isShow;
 
 @end

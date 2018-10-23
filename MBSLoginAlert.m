@@ -18,15 +18,15 @@
 
 @interface MBSLoginAlert()
 
+// 输入控件
 @property(nonatomic,strong)MBSInputView *loginNameV;
 @property(nonatomic,strong)MBSInputView *pwdV;
 
+// 登录，注册响应block
 @property(nonatomic,copy)CustomBlock logBlock;
 @property(nonatomic,copy)CustomBlock regBlock;
 
-
-
-
+// 遮盖视图
 @property (nonatomic,strong) UIView *cover;
 
 @end
@@ -35,7 +35,7 @@
 @implementation MBSLoginAlert
 
 
-
+#pragma mark  登录弹框构造方法
 -(instancetype)initWithTitle:(NSString *)title loginBlock:(CustomBlock)loginBlock andRegisterBlock:(CustomBlock)registBlock{
     self = [super initWithFrame:CGRectZero];
     if (self)
@@ -62,7 +62,7 @@
         titleLB.backgroundColor = [UIColor blackColor];
         [self addSubview:titleLB];
         
-        
+        // 手机号输入框
         self.loginNameV = [[MBSInputView alloc] initWithFrame:CGRectMake(5, titleLB.bottom + 20, fieldWidth - 10, fieldHeight) imageName:@"GameScript.bundle/userName"];
         self.loginNameV.inputTF.placeholder = @"手机号";
         self.loginNameV.inputTF.keyboardType = UIKeyboardTypeNumberPad;
@@ -70,16 +70,17 @@
         
         [self addLineOnBottem:self.loginNameV.frame];
         
+        // 密码输入框
         self.pwdV = [[MBSInputView alloc] initWithFrame:CGRectMake(5, self.loginNameV.bottom, fieldWidth - 10, fieldHeight) imageName:@"GameScript.bundle/password"];
         self.pwdV.inputTF.placeholder = @"密码";
         self.pwdV.inputTF.secureTextEntry = YES;
         [self addSubview:self.pwdV];
         
-        
+        // 添加华丽分割线
         [self addLineOnBottem:self.pwdV.frame];
         
         
-        // 227 202 125
+        // 新用户注册
         UIButton *regBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         regBtn.frame = CGRectMake(fieldWidth - 80, self.pwdV.bottom + 12, 65, 32);
         regBtn.layer.masksToBounds = YES;
@@ -89,7 +90,7 @@
         [self addSubview:regBtn];
         
 
-        // 227 202 125
+        // 确定
         UIButton *sureBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         sureBtn.frame = CGRectMake(20, regBtn.bottom + 13, fieldWidth - 40, 44);
         sureBtn.backgroundColor = MB_RGB(227, 202, 125);
@@ -104,15 +105,14 @@
         [regBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
         [sureBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
 
-        
-    
+        // 设置高度
         self.height = sureBtn.bottom + 13;
     }
     return self;
 }
 
 
-
+#pragma mark  注册弹框构造方法
 -(instancetype)initWithRegisterTitle:(NSString *)title loginBlock:(CustomBlock)loginBlock andRegisterBlock:(CustomBlock)registBlock{
     self = [super initWithFrame:CGRectZero];
     if (self)
