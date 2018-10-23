@@ -27,7 +27,7 @@
     
     self = [super initWithFrame:CGRectZero];
     if (self) {
-     
+        
         self.clickBlock = block;
         
         _isShow = NO;
@@ -52,7 +52,7 @@
         
         
         
-
+        
         // 添加弹出菜单
         self.otherView = [[UIView alloc] initWithFrame:CGRectMake(mainBtn.right + 3, 0, 34 * 5, 50)];
         self.otherView.hidden = YES;
@@ -60,7 +60,7 @@
         
         NSArray *imgArr = @[@"GameScript.bundle/menu",@"GameScript.bundle/menu2",@"GameScript.bundle/menu3",@"GameScript.bundle/menu4",@"GameScript.bundle/menu5"];
         NSArray *titleArr = @[@"刷新",@"账号",@"客服",@"公告",@"礼包"];
-
+        
         MBSUpDownButton *menuBtn;
         for (NSInteger i = 0; i < 5; i++) {
             
@@ -93,7 +93,7 @@
     }
     else{
         self.center = CGPointMake(self.center.x, touchPoint.y);
-
+        
     }
     
     
@@ -101,7 +101,7 @@
 
 #pragma mark  弹出菜单 点击事件
 - (void)menuBtnClick:(MBSUpDownButton *)sender{
-
+    
     if (self.clickBlock) {
         
         self.clickBlock(sender.tag - 10);
@@ -116,7 +116,7 @@
     NSLog(@"悬浮窗");
     _isShow = !_isShow;
     if (_isShow) {
-     
+        
         // 展开
         [UIView animateWithDuration:0.2 animations:^{
             
@@ -135,7 +135,7 @@
             self.left = kScreenWidth - 60.f;
             self.width = 50.f;
             self.otherView.hidden = YES;
-
+            
         } completion:^(BOOL finished) {
             
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -144,10 +144,10 @@
             });
         }];
         
-       
+        
     }
     
-   
+    
 }
 
 
@@ -166,7 +166,7 @@
         self.transform = CGAffineTransformIdentity;
         
     }];
-   
+    
     
 }
 

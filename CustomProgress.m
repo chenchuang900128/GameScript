@@ -26,7 +26,7 @@
         self.bgimg = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
         self.bgimg.layer.cornerRadius = self.frame.size.height/2;
         [self.bgimg.layer setMasksToBounds:YES];
-
+        
         [self addSubview:self.bgimg];
         
         // 进度条背景图片
@@ -58,7 +58,7 @@
         self.presentlab.text = [NSString stringWithFormat:@"%lu％",(unsigned long)progress];
         self.presentlab.frame = self.leftimg.frame;
     }
-   
+    
 }
 
 

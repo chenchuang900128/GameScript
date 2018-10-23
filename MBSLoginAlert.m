@@ -46,7 +46,7 @@
         CGFloat kSideX = 21.f;
         CGFloat fieldWidth = kScreenWidth - 2 * kSideX;
         CGFloat fieldHeight = 50;
-
+        
         self.width = fieldWidth;
         
         self.backgroundColor = [UIColor whiteColor];
@@ -89,7 +89,7 @@
         [regBtn setTitle:@"新用户注册" forState:UIControlStateNormal];
         [self addSubview:regBtn];
         
-
+        
         // 确定
         UIButton *sureBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         sureBtn.frame = CGRectMake(20, regBtn.bottom + 13, fieldWidth - 40, 44);
@@ -104,7 +104,7 @@
         
         [regBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
         [sureBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
-
+        
         // 设置高度
         self.height = sureBtn.bottom + 13;
     }
@@ -139,24 +139,27 @@
         [self addSubview:titleLB];
         
         
+        // 手机号输入框
         self.loginNameV = [[MBSInputView alloc] initWithFrame:CGRectMake(5, titleLB.bottom + 20, fieldWidth - 10, fieldHeight) imageName:@"GameScript.bundle/userName"];
         self.loginNameV.inputTF.placeholder = @"手机号";
         self.loginNameV.inputTF.keyboardType = UIKeyboardTypeNumberPad;
         [self addSubview:self.loginNameV];
         
+        // 添加华丽分割线
         [self addLineOnBottem:self.loginNameV.frame];
         
+        // 密码输入框
         self.pwdV = [[MBSInputView alloc] initWithFrame:CGRectMake(5, self.loginNameV.bottom, fieldWidth - 10, fieldHeight) imageName:@"GameScript.bundle/password"];
         self.pwdV.inputTF.placeholder = @"密码";
         self.pwdV.inputTF.secureTextEntry = YES;
         [self addSubview:self.pwdV];
         
-        
+        // 添加华丽分割线
         [self addLineOnBottem:self.pwdV.frame];
         
-        
+        // 确认密码输入框
         MBSInputView *againPwdV = [[MBSInputView alloc] initWithFrame:CGRectMake(5, self.pwdV.bottom, fieldWidth - 10, fieldHeight) imageName:@"GameScript.bundle/password"];
-        againPwdV.inputTF.placeholder = @"密码";
+        againPwdV.inputTF.placeholder = @"确认密码";
         againPwdV.inputTF.secureTextEntry = YES;
         [self addSubview:againPwdV];
         
@@ -164,7 +167,7 @@
         [self addLineOnBottem:againPwdV.frame];
         
         
-        // 227 202 125
+        // 老用户登录
         UIButton *regBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         regBtn.frame = CGRectMake(fieldWidth - 80, againPwdV.bottom + 13, 65, 32);
         regBtn.layer.masksToBounds = YES;
@@ -174,7 +177,7 @@
         [self addSubview:regBtn];
         
         
-        // 227 202 125
+        // 确定
         UIButton *sureBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         sureBtn.frame = CGRectMake(20, regBtn.bottom + 13, fieldWidth - 40, 44);
         sureBtn.backgroundColor = MB_RGB(227, 202, 125);
@@ -196,6 +199,7 @@
 }
 
 
+#pragma mark 登录弹框 登录 注册响应事件
 - (void)btnClick:(UIButton *)sender{
     
     if (sender.tag == 10) {
@@ -214,6 +218,7 @@
     
 }
 
+#pragma mark 注册弹框 登录 注册响应事件
 - (void)btnClick2:(UIButton *)sender{
     
     if (sender.tag == 10) {
@@ -231,6 +236,7 @@
     
 }
 
+#pragma mark 遮挡面纱视图
 - (UIView *)cover{
     
     if (_cover == nil) {
@@ -241,6 +247,8 @@
     return _cover;
 }
 
+
+#pragma mark 显示视图
 - (void)show{
     
     //    UIWindow *window = [[UIApplication sharedApplication].windows lastObject];
@@ -257,19 +265,16 @@
         
     }];
     self.center = CGPointMake(window.center.x, (window.frame.size.height -  216)/2);
-    if (DeviceIsIphoneX) {
-        
-    }
     
 }
 
+#pragma mark 隐藏视图
 - (void)hide{
     
-    // 设置微信支付界面消失动画
+    // 界面消失动画
     [UIView animateWithDuration:0.2 animations:^{
         
         // self.transform = CGAffineTransformMakeScale(0.6, 0.6);
-        // 退下键盘
         
     }completion:^(BOOL finished) {
         
