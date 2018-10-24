@@ -15,12 +15,22 @@
 
 @interface MBSSuspendControl()
 
+
+// 展开视图
 @property (nonatomic,strong)UIView *otherView;
+// 点击Block
 @property (nonatomic,copy)myClickBlock clickBlock;
+// 是否展开
+@property(nonatomic,assign)BOOL isShow;
+
+// 悬浮窗是否在右边
+@property(nonatomic,assign)BOOL isRight;
 
 @end
 
 @implementation MBSSuspendControl{
+    
+    UIButton *mainBtn;
 }
 
 - (instancetype)initWithClickBlock:(myClickBlock)block{
@@ -31,17 +41,21 @@
         self.clickBlock = block;
         
         _isShow = NO;
+        _isRight = YES;
         
-        self.frame = CGRectMake(kScreenWidth - 60, 94, 50, 50);
-        self.backgroundColor = [UIColor colorWithWhite:0.1 alpha:0.7];
+        //  设置frame 及 圆角
+        self.frame = CGRectMake(kScreenWidth - 53, 94, 50, 50);
         self.layer.cornerRadius = 25.f;
+        self.layer.masksToBounds = YES;
+        
+        // 设置背景颜色
+        self.backgroundColor = [UIColor colorWithWhite:0.1 alpha:0.7];
         
         // 主菜单
-        UIButton *mainBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        
+        mainBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [mainBtn setBackgroundImage:[UIImage imageNamed:@"GameScript.bundle/menu7"] forState:UIControlStateNormal];
         [mainBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
-        mainBtn.frame = CGRectMake(8, 8, 32, 32);
+        mainBtn.frame = CGRectMake(9, 9, 32, 32);
         
         [self addSubview:mainBtn];
         
@@ -52,15 +66,17 @@
         
         
         
-        
-        // 添加弹出菜单
+        // 添加弹出菜单父视图
         self.otherView = [[UIView alloc] initWithFrame:CGRectMake(mainBtn.right + 3, 0, 34 * 5, 50)];
         self.otherView.hidden = YES;
         [self addSubview:self.otherView];
         
+        // 循环创建子菜单
         NSArray *imgArr = @[@"GameScript.bundle/menu",@"GameScript.bundle/menu2",@"GameScript.bundle/menu3",@"GameScript.bundle/menu4",@"GameScript.bundle/menu5"];
         NSArray *titleArr = @[@"刷新",@"账号",@"客服",@"公告",@"礼包"];
         
+        
+        // 添加子菜单
         MBSUpDownButton *menuBtn;
         for (NSInteger i = 0; i < 5; i++) {
             
@@ -78,26 +94,97 @@
 
 
 #pragma mark   手势滑动触发事件
+
 - (void)moveViewWithGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer
 {
     
-    CGPoint touchPoint = [panGestureRecognizer locationInView:[UIApplication sharedApplication].delegate.window];
+    // 移动状态
+    UIGestureRecognizerState state =  panGestureRecognizer.state;
     
-    if (touchPoint.y < kStatusBarHeight + 35) {
-        
-        self.center = CGPointMake(self.center.x, kStatusBarHeight + 35);
-    }
-    else if(touchPoint.y > kScreenHeight - 50){
-        
-        self.center = CGPointMake(self.center.x, kScreenHeight - 50);
-    }
-    else{
-        self.center = CGPointMake(self.center.x, touchPoint.y);
-        
+    switch (state) {
+        case UIGestureRecognizerStateBegan:
+            
+            break;
+        case UIGestureRecognizerStateChanged:
+        {
+            // 改变状态
+            CGPoint touchPoint = [panGestureRecognizer locationInView:[UIApplication sharedApplication].delegate.window];
+            self.center = CGPointMake(touchPoint.x, touchPoint.y);
+        }
+            break;
+        case UIGestureRecognizerStateEnded:
+        {
+            
+            
+            CGPoint touchPoint = [panGestureRecognizer locationInView:[UIApplication sharedApplication].delegate.window];
+            
+            
+            if (touchPoint.y < kStatusBarHeight + 35) {
+                
+                // 在左边
+                if(touchPoint.x < kScreenWidth/2){
+                    
+                    self.isRight = NO;
+                    touchPoint = CGPointMake(28, kStatusBarHeight + 35);
+                    
+                }
+                else{
+                    self.isRight = YES;
+                    touchPoint = CGPointMake(kScreenWidth-28, kStatusBarHeight + 35);
+                    
+                }
+            }
+            else if(touchPoint.y > kScreenHeight - 50){
+                
+                if(touchPoint.x < kScreenWidth/2){
+                    
+                    self.isRight = NO;
+                    touchPoint = CGPointMake(27, kScreenHeight - 50);
+                    
+                }
+                else{
+                    self.isRight = YES;
+                    touchPoint = CGPointMake(kScreenWidth-27, kScreenHeight - 50);
+                    
+                }
+                
+            }
+            else{
+                
+                if(touchPoint.x < kScreenWidth/2){
+                    
+                    self.isRight = NO;
+                    touchPoint = CGPointMake(27, touchPoint.y);
+                    
+                }
+                else{
+                    self.isRight = YES;
+                    touchPoint = CGPointMake(kScreenWidth-27, touchPoint.y);
+                    
+                }
+                
+            }
+            
+            self.isShow = NO;
+            [UIView animateWithDuration:0.3 animations:^{
+                self.otherView.hidden = YES;
+                self.width = 50.f;
+                self.center = touchPoint;
+                
+            } completion:^(BOOL finished) {
+                
+            }];
+            
+        }
+            break;
+            
+        default:
+            break;
     }
     
     
 }
+
 
 #pragma mark  弹出菜单 点击事件
 - (void)menuBtnClick:(MBSUpDownButton *)sender{
@@ -107,21 +194,56 @@
         self.clickBlock(sender.tag - 10);
     }
     
+    self.isShow = NO;
+    // 收缩
+    [UIView animateWithDuration:0.2 animations:^{
+        
+        if (self.isRight) {
+            self.left = kScreenWidth - 52.f;
+            self.width = 50.f;
+            self.otherView.hidden = YES;
+        }
+        else{
+            self.left = 2.f;
+            self.width = 50.f;
+            self.otherView.hidden = YES;
+        }
+        
+        
+    } completion:^(BOOL finished) {
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            
+            if (self.isRight) {
+                self.left = kScreenWidth - 34.f;
+            }
+            else{
+                self.left = -16.f;
+            }
+        });
+    }];
 }
 
 
 #pragma mark  主菜单点击， 展开或收缩
 - (void)btnClick:(MBSSuspendControl *)sender{
     
-    NSLog(@"悬浮窗");
     _isShow = !_isShow;
     if (_isShow) {
         
         // 展开
         [UIView animateWithDuration:0.2 animations:^{
             
-            self.left = kScreenWidth - 230.f;
-            self.width = 230.f;
+            if (self.isRight) {
+                self.left = kScreenWidth - 230.f;
+                self.width = 230.f;
+            }
+            else{
+                self.left = 2;
+                self.width = 230.f;
+            }
+            
+            
         } completion:^(BOOL finished) {
             
             self.otherView.hidden = NO;
@@ -132,16 +254,21 @@
         // 收缩
         [UIView animateWithDuration:0.2 animations:^{
             
-            self.left = kScreenWidth - 60.f;
-            self.width = 50.f;
-            self.otherView.hidden = YES;
+            if (self.isRight) {
+                self.left = kScreenWidth - 52.f;
+                self.width = 50.f;
+                self.otherView.hidden = YES;
+            }
+            else{
+                self.left = 2.f;
+                self.width = 50.f;
+                self.otherView.hidden = YES;
+            }
+            
             
         } completion:^(BOOL finished) {
             
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                self.left = kScreenWidth - 30;
-                
-            });
+            
         }];
         
         

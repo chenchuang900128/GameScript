@@ -9,9 +9,15 @@
 
 #import "CustomProgress.h"
 
+@interface CustomProgress()
+
+
+@end
+
+
 @implementation CustomProgress
 
-
+#pragma mark 构造方法
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -46,22 +52,30 @@
 }
 
 
+#pragma mark 设置进度条值
 -(void)setProgress:(NSUInteger)progress
 {
     // 防止被除数为0
     if((progress > 0) && (self.maxValue > 0)){
         
-        // 根据进度条的值 算出展示的长度
-        self.leftimg.frame = CGRectMake(0, 0, self.frame.size.width/self.maxValue*progress, self.frame.size.height);
-        
-        // 显示进度数据
-        self.presentlab.text = [NSString stringWithFormat:@"%lu％",(unsigned long)progress];
-        self.presentlab.frame = self.leftimg.frame;
+        [UIView animateWithDuration:0.2 animations:^{
+            
+            // 根据进度条的值 算出展示的长度
+            self.leftimg.frame = CGRectMake(0, 0, self.frame.size.width/self.maxValue*progress, self.frame.size.height);
+            self.presentlab.frame = self.leftimg.frame;
+            // 显示进度数据
+            self.presentlab.text = [NSString stringWithFormat:@"%lu％",(unsigned long)progress];
+
+        } completion:^(BOOL finished) {
+            
+            
+        }];
     }
     
 }
 
 
+#pragma mark 显示方法
 - (void)show{
     
     UIWindow *window = [[[UIApplication sharedApplication] delegate] window];
@@ -78,6 +92,7 @@
     
 }
 
+// 隐藏方法
 - (void)hide{
     
     // 界面消失动画
@@ -89,7 +104,8 @@
     }completion:^(BOOL finished) {
         
         [self removeFromSuperview];
-        
+        self.leftimg.bounds = CGRectZero;
+        self.presentlab.frame = CGRectZero;
         
     }];
 }

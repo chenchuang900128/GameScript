@@ -110,7 +110,11 @@
 				04CE003A217B257500375621 /* CustomProgress.h */,
 				04CE0039217B257500375621 /* CustomProgress.m */,
 				046449C6217A27CD00A588BA /* MBSPrefixDefine.h */,
-				0427A1A62178C02C00DAB134 /* Source */,
+				0427A1AA2178C02C00DAB134 /* MBSUpDownButton.h */,
+				0427A1B52178C02C00DAB134 /* MBSUpDownButton.m */,
+				0427A1B42178C02C00DAB134 /* MBSInputView.h */,
+				0427A1AC2178C02C00DAB134 /* MBSInputView.m */,
+				0427A1A62178C02C00DAB134 /* MBSTextField */,
 				0427A1BC2178C02C00DAB134 /* UIViewExt */,
 				0427A18D2178BFD700DAB134 /* GameScript */,
 				0427A1982178BFD700DAB134 /* GameScriptTests */,
@@ -145,7 +149,7 @@
 			path = GameScriptTests;
 			sourceTree = "<group>";
 		};
-		0427A1A62178C02C00DAB134 /* Source */ = {
+		0427A1A62178C02C00DAB134 /* MBSTextField */ = {
 			isa = PBXGroup;
 			children = (
 				0427A1A72178C02C00DAB134 /* RegexKitLite.h */,
@@ -154,18 +158,14 @@
 				0427A1B22178C02C00DAB134 /* NSStringUtils.m */,
 				0427A1A92178C02C00DAB134 /* MBAccessoryView.h */,
 				0427A1B12178C02C00DAB134 /* MBAccessoryView.m */,
-				0427A1AA2178C02C00DAB134 /* MBSUpDownButton.h */,
-				0427A1B52178C02C00DAB134 /* MBSUpDownButton.m */,
 				0427A1B32178C02C00DAB134 /* UILabel+Utils.h */,
 				0427A1AB2178C02C00DAB134 /* UILabel+Utils.m */,
-				0427A1B42178C02C00DAB134 /* MBSInputView.h */,
-				0427A1AC2178C02C00DAB134 /* MBSInputView.m */,
 				0427A1B82178C02C00DAB134 /* MBGlobalCore.h */,
 				0427A1AD2178C02C00DAB134 /* MBGlobalCore.m */,
 				0427A1B62178C02C00DAB134 /* MBSTextField.h */,
 				0427A1AE2178C02C00DAB134 /* MBSTextField.m */,
 			);
-			path = Source;
+			path = MBSTextField;
 			sourceTree = "<group>";
 		};
 		0427A1BC2178C02C00DAB134 /* UIViewExt */ = {

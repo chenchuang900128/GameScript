@@ -1,0 +1,53 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [
+    {
+      'type': 'directory',
+      'name': "/Users/mac/Library/Developer/Xcode/DerivedData/GameScript-aprgomftidpimvdxcnckulifvaun/Build/Products/Release-iphonesimulator/GameScript.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "CustomProgress.h",
+          'external-contents': "/Users/mac/Desktop/GameScript/CustomProgress.h"
+        },
+        {
+          'type': 'file',
+          'name': "GameScript-Swift.h",
+          'external-contents': "/Users/mac/Library/Developer/Xcode/DerivedData/GameScript-aprgomftidpimvdxcnckulifvaun/Build/Products/Release-iphonesimulator/GameScript.framework/Headers/GameScript-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "GameScript.h",
+          'external-contents': "/Users/mac/Desktop/GameScript/GameScript/GameScript.h"
+        },
+        {
+          'type': 'file',
+          'name': "MBSLoginAlert.h",
+          'external-contents': "/Users/mac/Desktop/GameScript/MBSLoginAlert.h"
+        },
+        {
+          'type': 'file',
+          'name': "MBSPrefixDefine.h",
+          'external-contents': "/Users/mac/Desktop/GameScript/MBSPrefixDefine.h"
+        },
+        {
+          'type': 'file',
+          'name': "MBSSuspendControl.h",
+          'external-contents': "/Users/mac/Desktop/GameScript/MBSSuspendControl.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/mac/Library/Developer/Xcode/DerivedData/GameScript-aprgomftidpimvdxcnckulifvaun/Build/Products/Release-iphonesimulator/GameScript.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/mac/Desktop/GameScript/build/GameScript.build/Release-iphonesimulator/GameScript.build/module.modulemap"
+        }
+      ]
+    }
+  ]
+}

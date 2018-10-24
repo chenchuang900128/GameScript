@@ -25,7 +25,6 @@ typedef void (^myClickBlock)(NSUInteger index);
 // 隐藏
 - (void)hide;
 
-// 是否展开
-@property(nonatomic,assign)BOOL isShow;
+
 
 @end

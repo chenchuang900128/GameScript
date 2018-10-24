@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface CustomProgress : UIView
+
 // 背景图片
 @property(nonatomic, strong)UIImageView *bgimg;
 // 左边进度条图片
