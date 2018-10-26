@@ -108,68 +108,70 @@
             break;
         case UIGestureRecognizerStateChanged:
         {
-            // 改变状态
-            CGPoint touchPoint = [panGestureRecognizer locationInView:[UIApplication sharedApplication].delegate.window];
-            self.center = CGPointMake(touchPoint.x, touchPoint.y);
+            // 改变状态 相对window移动了多少
+            CGPoint transPoint = [panGestureRecognizer translationInView:[UIApplication sharedApplication].delegate.window];
+            // 相应改变中心点
+            self.center = CGPointMake(self.center.x + transPoint.x, self.center.y+transPoint.y);
         }
             break;
         case UIGestureRecognizerStateEnded:
         {
             
-            CGPoint touchPoint = [panGestureRecognizer locationInView:[UIApplication sharedApplication].delegate.window];
+            //  手势结束后，确定的中心点
+            CGPoint centerPoint = CGPointZero;
             
-            if (touchPoint.y < kStatusBarHeight + 35) {
-                
+            if (self.center.y < kStatusBarHeight + 35) {
+
                 // 在左边
-                if(touchPoint.x < kScreenWidth/2){
-                    
+                if(self.center.x < kScreenWidth/2){
+
                     self.isRight = NO;
-                    touchPoint = CGPointMake(15, kStatusBarHeight + 35);
-                    
+                    centerPoint = CGPointMake(15, kStatusBarHeight + 35);
+
                 }
                 else{
                     self.isRight = YES;
-                    touchPoint = CGPointMake(kScreenWidth-15, kStatusBarHeight + 35);
-                    
+                    centerPoint = CGPointMake(kScreenWidth-15, kStatusBarHeight + 35);
+
                 }
             }
-            else if(touchPoint.y > kScreenHeight - 50){
-                
-                if(touchPoint.x < kScreenWidth/2){
-                    
+            else if(self.center.y > kScreenHeight - 50){
+
+                if(self.center.x < kScreenWidth/2){
+
                     self.isRight = NO;
-                    touchPoint = CGPointMake(15, kScreenHeight - 50);
-                    
+                    centerPoint = CGPointMake(15, kScreenHeight - 50);
+
                 }
                 else{
                     self.isRight = YES;
-                    touchPoint = CGPointMake(kScreenWidth-15, kScreenHeight - 50);
-                    
+                    centerPoint = CGPointMake(kScreenWidth-15, kScreenHeight - 50);
+
                 }
-                
+
             }
             else{
-                
-                if(touchPoint.x < kScreenWidth/2){
-                    
+
+                if(self.center.x < kScreenWidth/2){
+
                     self.isRight = NO;
-                    touchPoint = CGPointMake(15, touchPoint.y);
+                    centerPoint = CGPointMake(15, self.center.y);
                 }
                 else{
                     self.isRight = YES;
-                    touchPoint = CGPointMake(kScreenWidth-15, touchPoint.y);
+                    centerPoint = CGPointMake(kScreenWidth-15, self.center.y);
                 }
-                
+
             }
-            
+
             self.isShow = NO;
             [UIView animateWithDuration:0.3 animations:^{
                 self.otherView.hidden = YES;
                 self.width = 50.f;
-                self.center = touchPoint;
-                
+                self.center = centerPoint;
+
             } completion:^(BOOL finished) {
-                
+
             }];
             
         }
@@ -178,8 +180,8 @@
         default:
             break;
     }
-    
-    
+    [panGestureRecognizer setTranslation:CGPointMake(0, 0) inView:self];
+
 }
 
 
