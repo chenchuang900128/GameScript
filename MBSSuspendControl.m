@@ -51,14 +51,15 @@
         self.layer.masksToBounds = YES;
         
         // 设置背景颜色
-        self.backgroundColor = [UIColor colorWithWhite:0.1 alpha:0.7];
+        self.backgroundColor = MB_RGB(25, 21, 18);
         
         // 主菜单
         mainBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [mainBtn setBackgroundImage:[UIImage imageNamed:@"GameScript.bundle/menu7"] forState:UIControlStateNormal];
+        [mainBtn setImage:[UIImage imageNamed:@"GameScript.bundle/menu7"] forState:UIControlStateNormal];
         [mainBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
-        mainBtn.frame = CGRectMake(9, 9, 32, 32);
-        
+        mainBtn.frame = CGRectMake(5, 5, 40, 40);
+        mainBtn.layer.cornerRadius = 20.f;
+        mainBtn.backgroundColor = MB_RGB(59, 45, 36);
         [self addSubview:mainBtn];
         
         
@@ -69,7 +70,7 @@
         
         
         // 添加弹出菜单父视图
-        self.otherView = [[UIView alloc] initWithFrame:CGRectMake(mainBtn.right + 3, 0, 34 * 5, 50)];
+        self.otherView = [[UIView alloc] initWithFrame:CGRectMake(mainBtn.right + 6, 0, 34 * 5, 50)];
         self.otherView.hidden = YES;
         [self addSubview:self.otherView];
         

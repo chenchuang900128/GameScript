@@ -44,7 +44,7 @@
     // 文字对齐方式
     self.titleLabel.textAlignment  = NSTextAlignmentCenter;
     // 文字字体大小
-    self.titleLabel.font = [UIFont systemFontOfSize:15];
+    self.titleLabel.font = [UIFont systemFontOfSize:14];
 }
 
 
