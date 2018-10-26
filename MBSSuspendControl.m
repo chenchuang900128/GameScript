@@ -13,6 +13,8 @@
 
 
 
+
+
 @interface MBSSuspendControl()
 
 
@@ -44,7 +46,7 @@
         _isRight = YES;
         
         //  设置frame 及 圆角
-        self.frame = CGRectMake(kScreenWidth - 53, 94, 50, 50);
+        self.frame = CGRectMake(kScreenWidth - 40, 94, 50, 50);
         self.layer.cornerRadius = 25.f;
         self.layer.masksToBounds = YES;
         
@@ -97,7 +99,6 @@
 
 - (void)moveViewWithGestureRecognizer:(UIPanGestureRecognizer *)panGestureRecognizer
 {
-    
     // 移动状态
     UIGestureRecognizerState state =  panGestureRecognizer.state;
     
@@ -115,9 +116,7 @@
         case UIGestureRecognizerStateEnded:
         {
             
-            
             CGPoint touchPoint = [panGestureRecognizer locationInView:[UIApplication sharedApplication].delegate.window];
-            
             
             if (touchPoint.y < kStatusBarHeight + 35) {
                 
@@ -125,12 +124,12 @@
                 if(touchPoint.x < kScreenWidth/2){
                     
                     self.isRight = NO;
-                    touchPoint = CGPointMake(28, kStatusBarHeight + 35);
+                    touchPoint = CGPointMake(15, kStatusBarHeight + 35);
                     
                 }
                 else{
                     self.isRight = YES;
-                    touchPoint = CGPointMake(kScreenWidth-28, kStatusBarHeight + 35);
+                    touchPoint = CGPointMake(kScreenWidth-15, kStatusBarHeight + 35);
                     
                 }
             }
@@ -139,12 +138,12 @@
                 if(touchPoint.x < kScreenWidth/2){
                     
                     self.isRight = NO;
-                    touchPoint = CGPointMake(27, kScreenHeight - 50);
+                    touchPoint = CGPointMake(15, kScreenHeight - 50);
                     
                 }
                 else{
                     self.isRight = YES;
-                    touchPoint = CGPointMake(kScreenWidth-27, kScreenHeight - 50);
+                    touchPoint = CGPointMake(kScreenWidth-15, kScreenHeight - 50);
                     
                 }
                 
@@ -154,13 +153,11 @@
                 if(touchPoint.x < kScreenWidth/2){
                     
                     self.isRight = NO;
-                    touchPoint = CGPointMake(27, touchPoint.y);
-                    
+                    touchPoint = CGPointMake(15, touchPoint.y);
                 }
                 else{
                     self.isRight = YES;
-                    touchPoint = CGPointMake(kScreenWidth-27, touchPoint.y);
-                    
+                    touchPoint = CGPointMake(kScreenWidth-15, touchPoint.y);
                 }
                 
             }
@@ -190,7 +187,6 @@
 - (void)menuBtnClick:(MBSUpDownButton *)sender{
     
     if (self.clickBlock) {
-        
         self.clickBlock(sender.tag - 10);
     }
     
@@ -199,12 +195,12 @@
     [UIView animateWithDuration:0.2 animations:^{
         
         if (self.isRight) {
-            self.left = kScreenWidth - 52.f;
+            self.left = kScreenWidth - 40.f;
             self.width = 50.f;
             self.otherView.hidden = YES;
         }
         else{
-            self.left = 2.f;
+            self.left = -10.f;
             self.width = 50.f;
             self.otherView.hidden = YES;
         }
@@ -212,15 +208,15 @@
         
     } completion:^(BOOL finished) {
         
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            
-            if (self.isRight) {
-                self.left = kScreenWidth - 34.f;
-            }
-            else{
-                self.left = -16.f;
-            }
-        });
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//
+//            if (self.isRight) {
+//                self.left = kScreenWidth - 34.f;
+//            }
+//            else{
+//                self.left = -16.f;
+//            }
+//        });
     }];
 }
 
@@ -235,11 +231,11 @@
         [UIView animateWithDuration:0.2 animations:^{
             
             if (self.isRight) {
-                self.left = kScreenWidth - 230.f;
+                self.left = kScreenWidth - 233.f;
                 self.width = 230.f;
             }
             else{
-                self.left = 2;
+                self.left = 3;
                 self.width = 230.f;
             }
             
@@ -255,12 +251,12 @@
         [UIView animateWithDuration:0.2 animations:^{
             
             if (self.isRight) {
-                self.left = kScreenWidth - 52.f;
+                self.left = kScreenWidth - 40.f;
                 self.width = 50.f;
                 self.otherView.hidden = YES;
             }
             else{
-                self.left = 2.f;
+                self.left = -10.f;
                 self.width = 50.f;
                 self.otherView.hidden = YES;
             }
