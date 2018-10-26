@@ -29,7 +29,7 @@
     // 设置图片的位置 Center image
     CGPoint center;
     center.x = self.width/2;
-    center.y = self.height/2 - 8;
+    center.y = self.height/2 - 7;
     self.imageView.bounds = CGRectMake(0, 0, imgSize.width, imgSize.height);
     self.imageView.center = center;
     

@@ -46,7 +46,7 @@
         _isRight = YES;
         
         //  设置frame 及 圆角
-        self.frame = CGRectMake(kScreenWidth - 40, 94, 50, 50);
+        self.frame = CGRectMake(kScreenWidth - 40, 94, 48, 48);
         self.layer.cornerRadius = 25.f;
         self.layer.masksToBounds = YES;
         
@@ -57,7 +57,7 @@
         mainBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [mainBtn setImage:[UIImage imageNamed:@"GameScript.bundle/menu7"] forState:UIControlStateNormal];
         [mainBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
-        mainBtn.frame = CGRectMake(5, 5, 40, 40);
+        mainBtn.frame = CGRectMake(4, 4, 40, 40);
         mainBtn.layer.cornerRadius = 20.f;
         mainBtn.backgroundColor = MB_RGB(59, 45, 36);
         [self addSubview:mainBtn];
@@ -70,7 +70,7 @@
         
         
         // 添加弹出菜单父视图
-        self.otherView = [[UIView alloc] initWithFrame:CGRectMake(mainBtn.right + 6, 0, 34 * 5, 50)];
+        self.otherView = [[UIView alloc] initWithFrame:CGRectMake(mainBtn.right + 10, 0, 34.5 * 5, 48)];
         self.otherView.hidden = YES;
         [self addSubview:self.otherView];
         
@@ -83,7 +83,7 @@
         MBSUpDownButton *menuBtn;
         for (NSInteger i = 0; i < 5; i++) {
             
-            menuBtn = [[MBSUpDownButton alloc] initWithFrame:CGRectMake(34 * i,2, 34,40) imgStr:imgArr[i] title:titleArr[i] imgSize:CGSizeMake(22, 22) spaceYCenter:5];
+            menuBtn = [[MBSUpDownButton alloc] initWithFrame:CGRectMake(34.5 * i, 2, 34, 40) imgStr:imgArr[i] title:titleArr[i] imgSize:CGSizeMake(22, 22) spaceYCenter:4];
             [menuBtn setTitleColor:MB_RGB(212, 43, 43) forState:UIControlStateNormal];
             [menuBtn addTarget:self action:@selector(menuBtnClick:) forControlEvents:UIControlEventTouchUpInside];
             menuBtn.tag = 10 + i;
@@ -168,7 +168,7 @@
             self.isShow = NO;
             [UIView animateWithDuration:0.3 animations:^{
                 self.otherView.hidden = YES;
-                self.width = 50.f;
+                self.width = 48.f;
                 self.center = centerPoint;
 
             } completion:^(BOOL finished) {
@@ -186,7 +186,7 @@
 }
 
 
-#pragma mark  弹出菜单 点击事件
+#pragma mark  弹出菜单 刷新，公告，账号，客服等点击事件
 - (void)menuBtnClick:(MBSUpDownButton *)sender{
     
     if (self.clickBlock) {
@@ -199,12 +199,12 @@
         
         if (self.isRight) {
             self.left = kScreenWidth - 40.f;
-            self.width = 50.f;
+            self.width = 48.f;
             self.otherView.hidden = YES;
         }
         else{
             self.left = -10.f;
-            self.width = 50.f;
+            self.width = 48.f;
             self.otherView.hidden = YES;
         }
         
@@ -234,12 +234,12 @@
         [UIView animateWithDuration:0.2 animations:^{
             
             if (self.isRight) {
-                self.left = kScreenWidth - 233.f;
-                self.width = 230.f;
+                self.left = kScreenWidth - 240.f;
+                self.width = 236.f;
             }
             else{
-                self.left = 3;
-                self.width = 230.f;
+                self.left = 4;
+                self.width = 236.f;
             }
             
             
@@ -255,12 +255,12 @@
             
             if (self.isRight) {
                 self.left = kScreenWidth - 40.f;
-                self.width = 50.f;
+                self.width = 48.f;
                 self.otherView.hidden = YES;
             }
             else{
                 self.left = -10.f;
-                self.width = 50.f;
+                self.width = 48.f;
                 self.otherView.hidden = YES;
             }
             
